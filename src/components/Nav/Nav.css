@@ -1,0 +1,16 @@
+@import "../../index.css";
+
+nav {
+  background-color: var(--lightblue-colour);
+  padding: 10px;
+  box-shadow: var(--drop-shadow);
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+nav a {
+  color: var(--text-colour);
+  text-decoration: none;
+  margin-right: 20px;
+}

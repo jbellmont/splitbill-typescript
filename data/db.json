@@ -1,0 +1,55 @@
+{
+  "activities": [
+    { 
+      "id": 1, 
+      "activityName": "Italy trip", 
+      "allSettledStatus": false,
+      "timeCreated": "xxx",
+      "lastUpdated": "xxx"
+    },
+    { 
+      "id": 1, 
+      "activityName": "Italy trip", 
+      "allSettledStatus": false,
+      "timeCreated": "xxx",
+      "lastUpdated": "xxx"
+    }
+  ],
+  "friends": [
+    {
+      "id": 1,
+      "activityId": 1,
+      "friendName": "Jack", 
+      "settledStatus": false
+    },
+    {
+      "id": 2, 
+      "activityId": 1,
+      "friendName": "Mary", 
+      "settledStatus": true
+    }
+  ],
+  "receipts": [
+    {
+      "activityId": 1,
+      "friendId": 1,
+      "receiptAmount": "5.53",
+      "receiptName": "Tesco shop",
+      "receiptCategory": "Groceries"
+    },
+    {
+      "activityId": 1,
+      "friendId": 1,
+      "receiptAmount": "20.99",
+      "receiptName": "Tickets for museum",
+      "receiptCategory": "Culture"
+    },
+    {
+      "activityId": 1,
+      "friendId": 2,
+      "receiptAmount": "10.00",
+      "receiptName": "Round of beers",
+      "receiptCategory": "Food & Drink"
+    }
+  ]
+}
