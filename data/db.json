@@ -1,31 +1,38 @@
 {
   "activities": [
-    { 
-      "id": 1, 
-      "activityName": "Italy trip", 
+    {
+      "id": 1,
+      "activityName": "Italy trip",
       "allSettledStatus": false,
-      "timeCreated": "xxx",
-      "lastUpdated": "xxx"
+      "timeCreated": "2021-03-07T21:17:45.781Z",
+      "lastUpdated": "2021-03-07T21:17:45.781Z"
     },
-    { 
-      "id": 1, 
-      "activityName": "Italy trip", 
+    {
+      "id": 2,
+      "activityName": "Boating holiday",
+      "allSettledStatus": true,
+      "timeCreated": "2021-03-07T21:17:45.781Z",
+      "lastUpdated": "2021-03-07T21:17:45.781Z"
+    },
+    {
+      "activityName": "Test",
       "allSettledStatus": false,
-      "timeCreated": "xxx",
-      "lastUpdated": "xxx"
+      "timeCreated": "2021-03-07T21:17:45.781Z",
+      "lastUpdated": "2021-03-07T21:17:45.781Z",
+      "id": 8
     }
   ],
   "friends": [
     {
       "id": 1,
       "activityId": 1,
-      "friendName": "Jack", 
+      "friendName": "Jack",
       "settledStatus": false
     },
     {
-      "id": 2, 
+      "id": 2,
       "activityId": 1,
-      "friendName": "Mary", 
+      "friendName": "Mary",
       "settledStatus": true
     }
   ],

@@ -1,0 +1,72 @@
+.activity-button-container {
+  display: grid;
+}
+
+@media(min-width: 768px) { /* Tablet */
+  .activity-button-container {
+    grid-template-columns: auto auto;
+  }
+}
+
+@media(min-width: 1024px) { /* Laptop and above */
+  .activity-button-container {
+    grid-template-columns: auto auto auto auto;
+  }
+}
+
+.activity-button {
+  display: flex;
+  align-items: center;
+  background-color: #FFF;
+  border-radius: 5px;
+  border: 2px solid var(--shadow-grey);
+  box-shadow: var(--drop-shadow);
+  color: #3C153B;
+  margin-top: var(--mobile-margin);
+  padding: 20px;
+  transition: box-shadow var(--hover-speed);
+}
+
+.activity-button:hover {
+  box-shadow: var(--shadow-grey) 0px 0px 10px;
+}
+
+.activity-button .left-side {
+  flex-grow: 4;
+  min-width: 40%;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
+}
+
+.activity-button .left-side h3, a{
+  color: var(--text-colour);
+  margin: 0;
+  overflow-wrap: break-word;
+}
+
+.activity-button .right-side {
+  flex-grow: 1;
+}
+
+.activity-button .right-side button {
+  border: 0;
+  background-color: #FFF;
+  font-size: 1.25rem;
+  color: var(--shadow-grey);
+  transition: color var(--hover-speed);
+  margin-left: 20px;
+  cursor: pointer;
+}
+
+.activity-button .right-side button:hover {
+  color: var(--text-colour);
+}
+
+@media (min-width: 768px) {
+  .activity-button {
+    margin-right: var(--mobile-margin);
+    min-width: 100px;
+    max-width: 200px;
+  }
+}
