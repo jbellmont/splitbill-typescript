@@ -1,11 +1,8 @@
 {
   "activities": [
     {
-      "id": 1,
-      "activityName": "Italy trip",
-      "allSettledStatus": false,
-      "timeCreated": "2021-03-07T21:17:45.781Z",
-      "lastUpdated": "2021-03-07T21:17:45.781Z"
+      "activityName": "Jack's trip",
+      "id": 1
     },
     {
       "id": 2,
@@ -40,21 +37,21 @@
     {
       "activityId": 1,
       "friendId": 1,
-      "receiptAmount": "5.53",
+      "receiptAmount": 5.53,
       "receiptName": "Tesco shop",
       "receiptCategory": "Groceries"
     },
     {
       "activityId": 1,
       "friendId": 1,
-      "receiptAmount": "20.99",
+      "receiptAmount": 20.99,
       "receiptName": "Tickets for museum",
       "receiptCategory": "Culture"
     },
     {
       "activityId": 1,
       "friendId": 2,
-      "receiptAmount": "10.00",
+      "receiptAmount": 10,
       "receiptName": "Round of beers",
       "receiptCategory": "Food & Drink"
     }

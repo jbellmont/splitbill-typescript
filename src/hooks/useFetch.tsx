@@ -1,7 +1,7 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState } from "react";
 
 const useFetch = (url: string, dataType: string, id?: string) => {
-  const [data, setData] = useState(null);
+  const [data, setData] = useState<any[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [isUpdated, setIsUpdated] = useState(false);
 
@@ -12,13 +12,17 @@ const useFetch = (url: string, dataType: string, id?: string) => {
   const fetchData = async () => {
     const apiCall = await fetch(url + dataType + `/${id}`);
     const response = await apiCall.json();
-    setData(response);
+    if (Array.isArray(response)) {
+      setData(response);
+    } else {
+      setData([response]);
+    }
     setIsLoading(false);
   };
 
   useEffect(() => {
     fetchData();
-  }, [isUpdated])
+  }, [isUpdated]);
 
   return { data, isLoading, isUpdated, setIsUpdated };
 }

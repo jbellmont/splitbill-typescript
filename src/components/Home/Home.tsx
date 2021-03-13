@@ -1,12 +1,13 @@
 import CreateActivityForm from '../CreateActivityForm/CreateActivityForm';
 import ActivityList from '../ActivityList/ActivityList';
+import Loading from '../Loading/Loading';
 
-import useAPI from '../../hooks/useFetch';
+import useFetch from '../../hooks/useFetch';
 
 import '../../index.css';
 
 const Home = () => {
-  const { data: activityData, isLoading, isUpdated, setIsUpdated } = useAPI('http://localhost:8000/', 'activities');
+  const { data: activityData, isLoading, isUpdated, setIsUpdated } = useFetch('http://localhost:8000/', 'activities');
 
   return (
     <div>
@@ -21,7 +22,7 @@ const Home = () => {
       <hr />
 
       {isLoading ?
-        <div><i className="fas fa-spinner spinner"></i> Loading</div> :
+        <Loading /> :
         <section>
           <ActivityList activityData={activityData!} />
         </section>
