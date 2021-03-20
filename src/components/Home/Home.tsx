@@ -24,7 +24,11 @@ const Home = () => {
       {isLoading ?
         <Loading /> :
         <section>
-          <ActivityList activityData={activityData!} />
+          <ActivityList 
+            activityData={activityData!} 
+            isUpdated={isUpdated}
+            setIsUpdated={setIsUpdated}
+          />
         </section>
       }
     </div>

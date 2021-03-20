@@ -1,7 +1,7 @@
 {
   "activities": [
     {
-      "activityName": "Jack's trip",
+      "activityName": "Jack's trip 2",
       "id": 1
     },
     {
@@ -12,25 +12,66 @@
       "lastUpdated": "2021-03-07T21:17:45.781Z"
     },
     {
-      "activityName": "Test",
-      "allSettledStatus": false,
-      "timeCreated": "2021-03-07T21:17:45.781Z",
-      "lastUpdated": "2021-03-07T21:17:45.781Z",
+      "activityName": "Trip from hell",
       "id": 8
     }
   ],
   "friends": [
     {
-      "id": 1,
-      "activityId": 1,
-      "friendName": "Jack",
-      "settledStatus": false
+      "friendName": "Bobbbby",
+      "id": 1
     },
     {
-      "id": 2,
+      "friendName": "aaaaa",
       "activityId": 1,
-      "friendName": "Mary",
-      "settledStatus": true
+      "settledStatus": true,
+      "id": 2
+    },
+    {
+      "activityId": 1,
+      "friendName": "Johnny",
+      "settledStatus": false,
+      "id": 4
+    },
+    {
+      "activityId": 1,
+      "friendName": "Harry",
+      "settledStatus": false,
+      "id": 5
+    },
+    {
+      "activityId": 2,
+      "friendName": "Tim",
+      "settledStatus": false,
+      "id": 6
+    },
+    {
+      "activityId": 2,
+      "friendName": "Jacky",
+      "settledStatus": false,
+      "id": 7
+    },
+    {
+      "activityId": 2,
+      "friendName": "Karen",
+      "settledStatus": false,
+      "id": 8
+    },
+    {
+      "friendName": "asdasd",
+      "id": 9
+    },
+    {
+      "activityId": 8,
+      "friendName": "Bob",
+      "settledStatus": false,
+      "id": 10
+    },
+    {
+      "activityId": 8,
+      "friendName": "Nobby",
+      "settledStatus": false,
+      "id": 11
     }
   ],
   "receipts": [

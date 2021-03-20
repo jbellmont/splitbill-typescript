@@ -4,24 +4,36 @@ const useFetch = (url: string, dataType: string, id?: string) => {
   const [data, setData] = useState<any[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [isUpdated, setIsUpdated] = useState(false);
-
-  if (!id) {
-    id = '';
-  }
-
+  
   const fetchData = async () => {
-    const apiCall = await fetch(url + dataType + `/${id}`);
-    const response = await apiCall.json();
-    if (Array.isArray(response)) {
-      setData(response);
+    let fullURL = '';
+    if (id) {
+      fullURL = url + dataType + `/${id}`;
     } else {
-      setData([response]);
+      fullURL = url + dataType;
     }
-    setIsLoading(false);
+    
+    try {
+      const apiCall = await fetch(fullURL);
+      const response = await apiCall.json();
+      if (Array.isArray(response)) {
+        setData(response);
+      } else {
+        setData([response]);
+      }
+      setIsLoading(false);
+    } catch (e) {
+      console.log(e);
+    }
+
   };
 
   useEffect(() => {
     fetchData();
+    return () => {
+      console.log('Clean up');
+      setIsLoading(true);
+    }
   }, [isUpdated]);
 
   return { data, isLoading, isUpdated, setIsUpdated };

@@ -1,3 +1,4 @@
+import { SyntheticEvent } from 'react';
 import { Link } from 'react-router-dom';
 import './ActivityList.css';
 
@@ -9,9 +10,20 @@ type ActivityListProps = {
     timeCreated: string,
     lastUpdated: string
   }[]
+  isUpdated: boolean,
+  setIsUpdated: Function
 }
  
-const ActivityList: React.FC<ActivityListProps> = ({activityData}) => {
+const ActivityList: React.FC<ActivityListProps> = ({activityData, isUpdated, setIsUpdated}) => {
+  const handleDeleteActivity = (id: number) => {
+    fetch('http://localhost:8000/activities/' + id, { method: 'DELETE' })
+      .then(response => {
+        console.log(response.status);
+        console.log(`ID ${id} successfully deleted`);
+        setIsUpdated(!isUpdated);
+      })
+      .catch(error => console.log(error));
+  };
 
   return (
     <div className="activity-button-container">
@@ -30,7 +42,7 @@ const ActivityList: React.FC<ActivityListProps> = ({activityData}) => {
             </div>
     
             <div className="right-side">
-              <button onClick={() => console.log('delete')}>
+              <button onClick={() => handleDeleteActivity(activity.id)}>
                 <i className="fas fa-trash-alt"></i>
               </button>
             </div>

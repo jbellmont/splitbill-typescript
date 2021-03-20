@@ -13,7 +13,7 @@ interface RequestBody {
   lastUpdated: Date
 }
  
-const CreateForm: React.FC<CreateActivityFormProps> = (
+const CreateActivityForm: React.FC<CreateActivityFormProps> = (
   {isUpdated, setIsUpdated}) => {
 
   const [inputValue, setInputValue] = useState('');
@@ -38,7 +38,7 @@ const CreateForm: React.FC<CreateActivityFormProps> = (
   };
 
   return (
-    <form className="create-form" onSubmit={handleSubmit} >
+    <form className="create-form" onSubmit={(e) => handleSubmit(e)} >
       <p>
         Create an Activity to start off. In your Activity you can add the 
         Friends who took part and the Receipts of the things they paid for.
@@ -56,4 +56,4 @@ const CreateForm: React.FC<CreateActivityFormProps> = (
   );
 }
  
-export default CreateForm;
+export default CreateActivityForm;
