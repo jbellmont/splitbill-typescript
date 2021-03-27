@@ -10,10 +10,6 @@
       "allSettledStatus": true,
       "timeCreated": "2021-03-07T21:17:45.781Z",
       "lastUpdated": "2021-03-07T21:17:45.781Z"
-    },
-    {
-      "activityName": "Trip from hell",
-      "id": 8
     }
   ],
   "friends": [
@@ -22,22 +18,16 @@
       "id": 1
     },
     {
-      "friendName": "aaaaa",
+      "friendName": "Aaron",
       "activityId": 1,
       "settledStatus": true,
       "id": 2
     },
     {
-      "activityId": 1,
       "friendName": "Johnny",
+      "activityId": 1,
       "settledStatus": false,
       "id": 4
-    },
-    {
-      "activityId": 1,
-      "friendName": "Harry",
-      "settledStatus": false,
-      "id": 5
     },
     {
       "activityId": 2,
@@ -62,16 +52,10 @@
       "id": 9
     },
     {
-      "activityId": 8,
-      "friendName": "Bob",
+      "activityId": 1,
+      "friendName": "Harry",
       "settledStatus": false,
       "id": 10
-    },
-    {
-      "activityId": 8,
-      "friendName": "Nobby",
-      "settledStatus": false,
-      "id": 11
     }
   ],
   "receipts": [

@@ -7,7 +7,7 @@ import useFetch from '../../hooks/useFetch';
 import '../../index.css';
 
 const Home = () => {
-  const { data: activityData, isLoading, isUpdated, setIsUpdated } = useFetch('http://localhost:8000/', 'activities');
+  const { data: activityData, isUpdated, setIsUpdated } = useFetch('http://localhost:8000/', 'activities');
 
   return (
     <div>
@@ -21,7 +21,7 @@ const Home = () => {
 
       <hr />
 
-      {isLoading ?
+      {!activityData.length ?
         <Loading /> :
         <section>
           <ActivityList 

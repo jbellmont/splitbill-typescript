@@ -32,6 +32,15 @@ const FriendsTable: React.FC<FriendsTableProps> = ({
     setShowEditFriendOverlay(!showEditFriendOverlay);
   };
 
+  // Delete friend
+  const handleDeleteFriend = async (friendId: number) => {
+    setCurrentFriendId(friendId);
+    const response = await fetch('http://localhost:8000/friends/' + friendId, { method: "DELETE" });
+    console.log(response.status);
+    console.log('Friend deleted');
+    setIsUpdated(!isUpdated);
+  };
+
   return (
     <div>
       <table>
@@ -65,7 +74,7 @@ const FriendsTable: React.FC<FriendsTableProps> = ({
                   </button>
                 </td>
                 <td data-id={friend.id} className="center">
-                  <button onClick={() => console.log('delete friend')}>
+                  <button onClick={() => handleDeleteFriend(friend.id)}>
                     <i className="fas fa-trash-alt"></i> 
                   </button>
                 </td>
@@ -77,16 +86,16 @@ const FriendsTable: React.FC<FriendsTableProps> = ({
 
       {/* Edit Friend overlay */}
       {(!showEditFriendOverlay) ? 
-      <Loading /> :
-      <EditFriendOverlay
-        showOverlay={showEditFriendOverlay}
-        setOverlay={setShowEditFriendOverlay}
-        friendId={currentFriendId}
-        currentActivityId={currentActivityId}
-        friendsData={friendsData}
-        isUpdated={isUpdated}
-        setIsUpdated={setIsUpdated}
-      />
+        null :
+        <EditFriendOverlay
+          showOverlay={showEditFriendOverlay}
+          setOverlay={setShowEditFriendOverlay}
+          friendId={currentFriendId}
+          currentActivityId={currentActivityId}
+          friendsData={friendsData}
+          isUpdated={isUpdated}
+          setIsUpdated={setIsUpdated}
+        />
       }
 
 

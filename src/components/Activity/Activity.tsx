@@ -6,6 +6,7 @@ import Loading from '../Loading/Loading';
 import EditActivityOverlay from '../EditActivityOverlay/EditActivityOverlay';
 import CreateFriendForm from '../CreateFriendForm/CreateFriendForm';
 import FriendsTable from '../FriendsTable/FriendsTable';
+import AmountOwed from '../AmountOwed/AmountOwed';
 
 
 const Activity = () => {
@@ -14,7 +15,6 @@ const Activity = () => {
   // Fetch activity data by specific id
   const { 
     data: activityData, 
-    isLoading: isLoadingActivityData, 
     isUpdated: isUpdatedActivityData, 
     setIsUpdated: setIsUpdatedActivityData 
   } = useFetch('http://localhost:8000/', 'activities', id);
@@ -25,7 +25,6 @@ const Activity = () => {
   // Fetch friend data by specific id
   const { 
     data: friendsData, 
-    isLoading: isLoadingFriendsData, 
     isUpdated: isUpdatedFriendsData, 
     setIsUpdated: setIsUpdatedFriendsData 
   } = useFetch('http://localhost:8000/', 'friends?activityId=' + id);
@@ -33,7 +32,7 @@ const Activity = () => {
 
   return (
     <>
-      {(isLoadingActivityData && isLoadingFriendsData) ?
+      {!(activityData.length && friendsData.length) ?
         <Loading /> :
         <div>
           <h1 className="activity-name-title">{activityData[0].activityName}</h1>
@@ -48,6 +47,7 @@ const Activity = () => {
             setOverlay={setShowEditActivityOverlay}
             id={id}
             currentActivityName={activityData[0].activityName}
+            // currentActivityName={'Generic trip name'}
             isUpdated={isUpdatedActivityData}
             setIsUpdated={setIsUpdatedActivityData}
           />
@@ -55,6 +55,7 @@ const Activity = () => {
           <section>
             <CreateFriendForm 
               currentActivityId={id}
+              // currentActivityName={'Generic trip name'}
               currentActivityName={activityData[0].activityName}
               isUpdated={isUpdatedFriendsData}
               setIsUpdated={setIsUpdatedFriendsData}
@@ -66,6 +67,7 @@ const Activity = () => {
             <h2>Friend list</h2>
             <FriendsTable 
               friendsData={friendsData}
+              // currentActivityName={'Generic trip name'}
               currentActivityName={activityData[0].activityName}
               currentActivityId={Number(id)}
               isUpdated={isUpdatedFriendsData}
@@ -74,13 +76,13 @@ const Activity = () => {
           <hr />
           </section>
 
-          {/* {friendsData.length > 1 ? 
+          {friendsData.length > 1 && 
             <section>
               <AmountOwed 
                 friendsData={friendsData}
               />
-            </section> :
-            null } */}
+            </section>
+          }
 
         </div>
       }

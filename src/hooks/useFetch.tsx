@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 
 const useFetch = (url: string, dataType: string, id?: string) => {
   const [data, setData] = useState<any[]>([]);
-  const [isLoading, setIsLoading] = useState(true);
   const [isUpdated, setIsUpdated] = useState(false);
   
   const fetchData = async () => {
@@ -21,7 +20,6 @@ const useFetch = (url: string, dataType: string, id?: string) => {
       } else {
         setData([response]);
       }
-      setIsLoading(false);
     } catch (e) {
       console.log(e);
     }
@@ -32,11 +30,10 @@ const useFetch = (url: string, dataType: string, id?: string) => {
     fetchData();
     return () => {
       console.log('Clean up');
-      setIsLoading(true);
     }
   }, [isUpdated]);
 
-  return { data, isLoading, isUpdated, setIsUpdated };
+  return { data, isUpdated, setIsUpdated };
 }
 
 export default useFetch;
