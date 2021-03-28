@@ -60,6 +60,7 @@
   ],
   "receipts": [
     {
+      "id": 1,
       "activityId": 1,
       "friendId": 1,
       "receiptAmount": 5.53,
@@ -67,6 +68,7 @@
       "receiptCategory": "Groceries"
     },
     {
+      "id": 2,
       "activityId": 1,
       "friendId": 1,
       "receiptAmount": 20.99,
@@ -76,9 +78,18 @@
     {
       "activityId": 1,
       "friendId": 2,
-      "receiptAmount": 10,
-      "receiptName": "Round of beers",
-      "receiptCategory": "Food & Drink"
+      "receiptAmount": 12,
+      "receiptName": "Round of beers12",
+      "receiptCategory": "Transport",
+      "id": 3
+    },
+    {
+      "receiptAmount": "2",
+      "receiptName": "adsasd",
+      "receiptCategory": "other",
+      "friendId": 2,
+      "activityId": 1,
+      "id": 4
     }
   ]
 }

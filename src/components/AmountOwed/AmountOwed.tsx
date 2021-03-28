@@ -1,5 +1,5 @@
 import { useState, useEffect, SyntheticEvent } from 'react';
-import Dropdown from '../Dropdown/Dropdown';
+import DropdownFriends from '../DropdownFriends/DropdownFriends';
 import './AmountOwed.css';
 
 interface friendsDataInterface {
@@ -43,10 +43,9 @@ const AmountOwed: React.FC<AmountOwedProps> = ({ friendsData }) => {
     <div>
       <h2 className="extra-margin-bottom">Amount owed</h2>
 
-      <Dropdown 
+      <DropdownFriends 
         header={friendDDheaderValue}
         data={friendsData}
-        type='friends'
         onDropdownChange={onDropdownChange}
         setListOpen={setListOpen}
         listOpen={listOpen}

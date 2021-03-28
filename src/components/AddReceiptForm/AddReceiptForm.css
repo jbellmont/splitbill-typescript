@@ -1,0 +1,53 @@
+.add-receipt-form {
+  background-color: #FFF;
+  width: 400px;
+  border-radius: 5px;
+  border: 2px solid var(--shadow-grey);
+  padding: 20px;
+  box-shadow: var(--drop-shadow);
+}
+
+.add-receipt-form input {
+  height: 50px;
+  font-family: var(--main-font);
+  font-size: 1.5rem;
+  border: 2px solid var(--shadow-grey);
+  border-radius: 5px;
+  width: 250px;
+  margin-bottom: 25px;
+}
+
+.add-receipt-form button {
+  font-family: var(--main-font);
+  font-size: 1rem;
+  font-weight: 700;
+  border: 0;
+  height: 50px;
+  background-color: var(--pink-colour);
+  border-radius: 20px;
+  box-shadow: var(--drop-shadow);
+  width: 120px;
+  transition: background-color var(--hover-speed);
+  margin-right: 10px;
+}
+
+.add-receipt-form input:focus {
+  outline: none;
+}
+
+.add-receipt-form select:focus {
+  outline: none;
+}
+
+.add-receipt-form button:hover {
+  background-color: #FFC2D5;
+  cursor: pointer;
+}
+
+.add-receipt-form button:focus {
+  outline: none;
+}
+
+.add-receipt-form select {
+  margin-bottom: 25px;
+}
